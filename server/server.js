@@ -4,7 +4,7 @@ const http = require('http');
 const io = require('socket.io');
 const cors = require('cors');
 
-const FETCH_INTERVAL = 5000;
+const FETCH_INTERVAL = 200000;
 const PORT = process.env.PORT || 4000;
 
 const tickers = [
@@ -21,6 +21,7 @@ function randomValue(min = 0, max = 1, precision = 0) {
   return random.toFixed(precision);
 }
 
+
 function utcDate() {
   const now = new Date();
   return new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
@@ -32,7 +33,7 @@ function getQuotes(socket) {
     ticker,
     exchange: 'NASDAQ',
     price: randomValue(100, 300, 2),
-    change: randomValue(0, 200, 2),
+    change: randomValue(-50, 200, 2),
     change_percent: randomValue(0, 1, 2),
     dividend: randomValue(0, 1, 2),
     yield: randomValue(0, 2, 2),

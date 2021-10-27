@@ -1,0 +1,129 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+.Typographics {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 12px;
+    text-align: left;
+    letter-spacing: -0.25px;
+  }
+.TypographicsTitle {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: -0.25px;
+    font-weight: bold;
+  }
+.Container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    width: 354px;
+    height: 136px;
+    margin: 0 6px;
+    padding: 6px;
+  
+    background-color: rgb(236, 197, 197);
+    border-radius: 6px;
+}
+.Container:hover{
+  background-color: rgb(187, 178, 178);
+}
+
+
+.Ticker{
+  composes: TypographicsTitle;  
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  text-overflow: ellipsis;
+  color: #202124;
+}
+.Ticker_Up_Arrow{
+  composes:Ticker;
+  color: green;
+}
+.Ticker_Down_Arrow{
+  composes:Ticker;
+  color: red;
+}
+.Ticker_Up_Arrow::after{
+ content: '▲' ;
+ position: absolute;
+ color: green
+}
+.Ticker_Down_Arrow::after{
+  content: '▼' ;
+  position: absolute;
+  color: red
+ }
+.Tickers_parametrs{
+display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+composes: Typographics;
+}
+.Change{
+    composes: Typographics;
+}
+.Change_decrease{
+  composes: Change;
+  color: red;
+}
+.Change_decrease::before{
+  content: '−';
+  color: red;
+}
+.Change_increase{
+  content: '+' ;
+  color: green;
+}
+.Change_increase::before{
+  content: '+' ;
+  color: green;
+}
+.Price{
+   composes: Typographics; 
+}
+.Change_percent{
+  composes: Typographics;
+}
+.Change_percent_increase{
+  composes: Change_percent;
+  color: green;
+}
+.Change_percent_increase{
+  composes: Change_percent;
+  color: green;
+}
+.Change_percent_increase::before{
+  content: '+';
+  color: green;
+}
+.Change_percent_decrease{
+  composes: Change_percent;
+  color: red;
+}
+.Change_percent_decrease::before{
+  content: '-';
+  color: red;
+}
+.Dividend{
+    composes: Typographics;
+}
+
+.LastTradeTime{
+    
+    composes: Typographics
+  
+}
