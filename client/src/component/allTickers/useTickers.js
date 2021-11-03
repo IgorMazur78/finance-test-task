@@ -11,13 +11,13 @@ const useTicker = () => {
   useEffect(() => {
     socket.emit(EVENT.start);
     return socket.emit(EVENT.stop);
-  }, [socket]);
+  }, []);
 
   useEffect(() => {
     socket.on(EVENT.ticker, response => {
       const array = Array.isArray(response) ? response : [response];
       dispatch(addTicker(array));
     });
-  }, [dispatch, socket]);
+  }, [dispatch]);
 };
 export default useTicker;

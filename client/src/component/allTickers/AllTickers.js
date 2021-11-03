@@ -1,13 +1,11 @@
 import React, { useState, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import moment from 'moment-timezone';
-import useTicker from './useTickers';
 import Ticker from '../ticker/Ticker';
 import FinanceChart from '../chart/FinanceChart';
 import style from './allTickers.module.css';
 
 const AllTickers = () => {
-  useTicker();
   const [activeChart, setActiveChart] = useState(false);
   const [nameTicker, setNameTicker] = useState('');
   const tickers = useSelector(store => store.ticker.tickers);

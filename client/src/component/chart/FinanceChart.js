@@ -12,7 +12,7 @@ export default function FinanceChart({ onClick, nameTicker, tickers }) {
   return (
     <div className={style.WrapperChart}>
       <h3>{nameTicker}</h3>
-      <div style={{ height: '300px', width: '600px' }}>
+      <div className={style.Chart}>
         <Line data={chartData} ref={fileRef} />
         <button className={style.ChartButton} onClick={onClick}>
           CLOSE CHART

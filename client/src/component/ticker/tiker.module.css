@@ -81,11 +81,11 @@ composes: Typographics;
   color: red;
 }
 .Change_decrease::before{
-  content: '−';
+  content: '';
   color: red;
 }
 .Change_increase{
-  content: '+' ;
+  composes: Change;
   color: green;
 }
 .Change_increase::before{
